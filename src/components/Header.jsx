@@ -1,21 +1,12 @@
-function Header({ totalItems, setIsCartOpen }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "20px",
-        backgroundColor: "#222",
-        color: "white",
-      }}
-    >
-      <h2>QuickCart</h2>
+import "../styles/app.css";
 
-      <button onClick={() => setIsCartOpen(true)}>
-        Cart ({totalItems})
-      </button>
-    </div>
+export default function Header() {
+  return (
+    <header className="app-header">
+      <div className="header-content">
+        <h1>Welcome to QuickCart</h1>
+        <p>Your one-stop shop for all tech gadgets</p>
+      </div>
+    </header>
   );
 }
-
-export default Header;
