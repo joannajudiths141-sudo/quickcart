@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 import { allProducts, categories } from "../data/products";
@@ -13,15 +13,13 @@ export default function CategoryPage() {
     (cat) => cat.id === categoryId
   );
 
-  const filteredProducts = useMemo(() => {
-    return allProducts.filter(
-      (product) =>
-        product.category === categoryId &&
-        product.name
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase())
-    );
-  }, [searchTerm, categoryId]);
+  const filteredProducts = allProducts.filter(
+    (product) =>
+      product.category === categoryId &&
+      product.name
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
+  );
 
   if (!categoryData) {
     return (
