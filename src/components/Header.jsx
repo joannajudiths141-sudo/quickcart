@@ -1,9 +1,12 @@
-function Header() {
+import "../styles/app.css";
+
+export default function Header() {
   return (
-    <header className="header">
-      <h1>QuickCart App 🚀 NEW</h1>
+    <header className="app-header">
+      <div className="header-content">
+        <h1>Welcome to QuickCart</h1>
+        <p>Your one-stop shop for all tech gadgets</p>
+      </div>
     </header>
   );
 }
-
-export default Header;
